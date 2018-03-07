@@ -6,7 +6,7 @@
 [ext_resource path="res://player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://analog/analog.tscn" type="PackedScene" id=5]
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 tree = ExtResource( 2 )
