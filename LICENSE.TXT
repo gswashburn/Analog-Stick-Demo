@@ -1,0 +1,3 @@
+Game Art from opengameart.org
+Original Analog Stick Code from (Jakub Grzesik) or my site (www.kivano.net)
+Analog Stick Code modified for Godot3 and 2d by Gerry Washburn (geraldwashburn.com)
