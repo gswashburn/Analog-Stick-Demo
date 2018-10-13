@@ -1,6 +1,6 @@
 extends Node
 
-export (PackedScene) var tree
+onready var tree = preload("res://tree.tscn")
 
 var screensize
 
@@ -13,7 +13,7 @@ func _ready():
 	randomize()
 	
 	# get Screensize and determine player size
-	screensize = get_viewport_rect().size
+	screensize = get_viewport.size
 	spawn_trees(rand_range(1,10))
 	
 
