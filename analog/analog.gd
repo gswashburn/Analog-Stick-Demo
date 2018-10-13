@@ -2,7 +2,7 @@ extends Node2D
 
 const INACTIVE_IDX = -1;
 export var isDynamicallyShowing = false
-export var listenerNodePath = ""
+export var listenerNodePath = "/root/game/player"
 export var padname = ""
 
 var ball
