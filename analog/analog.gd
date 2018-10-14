@@ -115,7 +115,7 @@ func hide():
 func updateBallPos():
 	ballPos.x = halfSize.x * currentForce.x #+ halfSize.x
 	ballPos.y = halfSize.y * -currentForce.y #+ halfSize.y
-	ball.position = Vector2(ballPos)
+	ball.position = Vector2(ballPos.x, ballPos.y)
 
 func calculateForce(var x, var y):
 	#get direction
