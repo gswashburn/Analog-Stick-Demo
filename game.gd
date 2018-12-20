@@ -13,7 +13,7 @@ func _ready():
 	randomize()
 	
 	# get Screensize and determine player size
-	screensize = get_viewport.size
+	screensize = get_viewport().size
 	spawn_trees(rand_range(1,10))
 	
 
