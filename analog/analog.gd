@@ -66,7 +66,7 @@ func need2ChangeActivePointer(event): #touch down inside analog
 			var length = (global_position - Vector2(event.position.x, event.position.y)).length_squared();
 			return length < squaredHalfSizeLength
 	else:
-	 	return false
+		return false
 
 func isActive():
 	return currentPointerIDX != INACTIVE_IDX
