@@ -1,9 +1,9 @@
 extends Node2D
 
 const INACTIVE_IDX = -1;
-export var isDynamicallyShowing = false
-export var listenerNodePath = "/root/game/player"
-export var padname = ""
+@export var isDynamicallyShowing = false
+@export var listenerNodePath = "/root/game/player"
+@export var padname = ""
 
 var ball
 var bg 
@@ -66,7 +66,7 @@ func need2ChangeActivePointer(event): #touch down inside analog
 			var length = (global_position - Vector2(event.position.x, event.position.y)).length_squared();
 			return length < squaredHalfSizeLength
 	else:
-	 	return false
+		return false
 
 func isActive():
 	return currentPointerIDX != INACTIVE_IDX
@@ -90,8 +90,7 @@ func process_input(event):
 	calculateForce(event.position.x - global_position.x, event.position.y - global_position.y)
 	updateBallPos()
 	
-	var isReleased = isReleased(event)
-	if isReleased:
+	if isReleased(event):
 		reset()
 
 
@@ -117,7 +116,7 @@ func updateBallPos():
 	ballPos.y = halfSize.y * -currentForce.y #+ halfSize.y
 	ball.position = Vector2(ballPos.x, ballPos.y)
 
-func calculateForce(var x, var y):
+func calculateForce(x, y):
 	#get direction
 	currentForce.x = (x - centerPoint.x)/halfSize.x
 	currentForce.y = -(y - centerPoint.y)/halfSize.y

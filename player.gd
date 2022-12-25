@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var speed = 300
+@export var speed = 300
 
 # Player Velocity
 var velocity = Vector2(0,0)
@@ -87,7 +87,7 @@ func analog_force_change(inForce, inStick):
 #		analog_velocity.x = int(round(analog_velocity.x))
 #		analog_velocity.y = int(round(analog_velocity.y))
 		
-		analog_velocity.x = stepify(analog_velocity.x, 1)
-		analog_velocity.y = stepify(analog_velocity.y, 1)
+		analog_velocity.x = snapped(analog_velocity.x, 1)
+		analog_velocity.y = snapped(analog_velocity.y, 1)
 #		print(analog_velocity)
 		

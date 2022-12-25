@@ -1,85 +1,42 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bl60sc8vjnsd4"]
 
-[ext_resource path="res://game.gd" type="Script" id=1]
-[ext_resource path="res://tree.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bg.jpg" type="Texture" id=3]
-[ext_resource path="res://player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://analog/analog.tscn" type="PackedScene" id=5]
+[ext_resource type="Script" path="res://game.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cnvf88q8veney" path="res://bg.jpg" id="3"]
+[ext_resource type="PackedScene" uid="uid://dwk4q8ahtll3o" path="res://player.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://analog/analog.tscn" id="5"]
 
-[node name="game" type="Node2D" index="0"]
+[node name="game" type="Node2D"]
+script = ExtResource("1")
 
-script = ExtResource( 1 )
-tree = ExtResource( 2 )
-
-[node name="bg" type="Sprite" parent="." index="0"]
-
-position = Vector2( 1, 1 )
-texture = ExtResource( 3 )
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+texture = ExtResource("3")
 centered = false
-_sections_unfolded = [ "Animation", "Material", "Offset", "Transform" ]
 
-[node name="player" parent="." index="1" instance=ExtResource( 4 )]
+[node name="player" parent="." instance=ExtResource("4")]
+position = Vector2(623.365, 333.111)
+audio_bus_name = &"Master"
 
-position = Vector2( 623.365, 333.111 )
+[node name="tree_container" type="Node" parent="."]
 
-[node name="tree_container" type="Node" parent="." index="2"]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="UI" type="CanvasLayer" parent="." index="3"]
+[node name="AreaAnalogLeft" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="AreaAnalogLeft" type="Control" parent="UI" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 881.0
-margin_top = 71.0
-margin_right = 1200.0
-margin_bottom = 640.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
-
-[node name="AnalogLeft" parent="UI/AreaAnalogLeft" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 251.294, 498.692 )
+[node name="AnalogLeft" parent="UI/AreaAnalogLeft" instance=ExtResource("5")]
+position = Vector2(251.294, 498.692)
 isDynamicallyShowing = true
 listenerNodePath = "/root/game/player"
 padname = "leftPad"
 
-[node name="AreaAnalogRight" type="Control" parent="UI" index="1"]
+[node name="AreaAnalogRight" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 75.0
-margin_top = 73.0
-margin_right = 394.0
-margin_bottom = 642.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
-
-[node name="AnalogRight" parent="UI/AreaAnalogRight" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 64.2845, 496.744 )
+[node name="AnalogRight" parent="UI/AreaAnalogRight" instance=ExtResource("5")]
+position = Vector2(64.2845, 496.744)
 isDynamicallyShowing = true
 listenerNodePath = "/root/game/player"
 padname = "rightPad"
-
-

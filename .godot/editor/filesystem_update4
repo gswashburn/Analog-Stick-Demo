@@ -1,0 +1,5 @@
+res://game.tscn
+res://player.tscn
+res://analog/analog.gd
+res://player.gd
+res://game.gd
